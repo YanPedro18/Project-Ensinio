@@ -39,9 +39,9 @@ function App() {
     <Container>
     <Options 
     options={[
-      { image: '../public/lang/brazil.png', text: 'PT', value: 'option1' },
-      { image: '../public/lang/usa.png', text: 'EN', value: 'option2' },
-      { image: '../public/lang/spain.png', text: 'ES', value: 'option3' }
+      { image: '/lang/brazil.png', text: 'PT', value: 'option1' },
+      { image: '/lang/usa.png', text: 'EN', value: 'option2' },
+      { image: '/lang/spain.png', text: 'ES', value: 'option3' }
     ]}
 
     />
