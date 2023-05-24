@@ -1,16 +1,17 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client';
 import App from './App.jsx'
 import './index.css'
-import './lib/i18n';
+//importando i18n
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
 
-
-
-
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
- 
+const rootElement = document.getElementById('root');
+//fazendo o i18n carregar o meu app com a props do i18n
+createRoot(rootElement).render(
+  <I18nextProvider i18n={i18n}>
     <App />
-  </React.StrictMode>,
-)
+  </I18nextProvider>
+);
+

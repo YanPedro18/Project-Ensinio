@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { styled, css } from "styled-components";
 import img from "../public/Path.png";
 
@@ -12,10 +13,9 @@ export const Text = styled.p`
   height: 72px;
 `;
 export const Container = styled.div`
-  overflow: hidden;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
   background-color: white;
-  height: 100vh;
   margin: 0 auto;
 `;
 export const Section = styled.section`
@@ -27,6 +27,13 @@ export const Section = styled.section`
   justify-content: space-around;
   text-align: start;
   margin: 0 auto;
+  align-items: center;
+
+  ${({ theme }) => css`
+    @media screen and (max-width: 445px) {
+      height: auto;
+    }
+  `}
 `;
 export const Section_flex = styled.div`
   margin: 0rem 2rem 0rem 2rem;
@@ -117,3 +124,7 @@ export const Option = styled.div`
 export const OptionImage = styled.img`
   margin-right: 10px;
 `;
+
+
+
+

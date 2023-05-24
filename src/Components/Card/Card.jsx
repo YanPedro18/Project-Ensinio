@@ -1,26 +1,22 @@
+// Card.jsx
 
-import {Image, Title, Text} from '../../Styles';
+import React from "react";
+//criando outra estrutura para card
+import {  Container, Image, Title, Text } from "../../Styles.js";
+import { useTranslation } from "react-i18next";
 
-function Card({imageSrc, title, text, language}) {
-    const getTextByLanguage = () => {
-        switch (language) {
-          case "en":
-            return text.en; // Altere para o campo correto no seu JSON
-          case "pt":
-            return text.pt; // Altere para o campo correto no seu JSON
-          case "es":
-            return text.es; // Altere para o campo correto no seu JSON
-          default:
-            return text.en; // Texto padrão em inglês
-        }
-      };
-    return(
-        <>
-        <Image src={imageSrc} alt="imagem do card"/>
-        <Title>{title}</Title>
-        <Text>{text}</Text>
-        </>
-    )
+function Card({ imageSrc, cardKey }) {
+  //novamente usando translation do i18n
+  const { t } = useTranslation();
+
+  return (
+    <Container>
+      <Image src={imageSrc} alt="Card Image" />
+      {/* //passei como props o cardkey para title e content por causa da props em app.jsx */}
+      <Title>{t(`${cardKey}.title`)}</Title>
+      <Text>{t(`${cardKey}.content`)}</Text>
+    </Container>
+  );
 }
 
 export default Card;
