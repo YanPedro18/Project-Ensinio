@@ -14,7 +14,7 @@ function App() {
   //fazendo requisição
   useEffect(() => {
     try {
-      axios.get('http://localhost:3000/posts')
+      axios.get('https://json-teste-three.vercel.app/posts')
       .then(function (resp) {
         setResponse(resp.data);
       })
